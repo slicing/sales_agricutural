@@ -9,11 +9,11 @@ import java.util.List;
 
 public interface UserRoleMapper  extends BaseMapper<UserRole> {
 
-    @Select("select * from user_role where role_id = #{role_id}")
-    List<UserRole> selectByRoleId(Integer role_id);
+    @Select("select * from user_role where role_id = #{roleId}")
+    List<UserRole> selectByRoleId(Integer roleId);
 
-    @Select("select * from user_role where user_id = #{user_id}")
-    UserRole selectByUserId(Integer user_id);
+    @Select("select * from user_role where user_id = #{userId}")
+    UserRole selectByUserId(Integer userId);
 
 
 }

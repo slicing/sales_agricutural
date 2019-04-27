@@ -10,9 +10,9 @@ public interface UserRoleService {
 
     PageInfo selectAll(int pageNum, int pageSize);
 
-    PageInfo selectByRoleId(int pageNum, int pageSize, Integer role_id);
+    PageInfo selectByRoleId(int pageNum, int pageSize, Integer roleId);
 
-    UserRole selectByUserId(Integer user_id);
+    UserRole selectByUserId(Integer userId);
 
     UserRole getOne(Integer id);
 

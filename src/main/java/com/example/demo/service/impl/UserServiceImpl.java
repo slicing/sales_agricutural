@@ -30,6 +30,12 @@ public class UserServiceImpl implements UserService {
     public User getOne(Integer id) {
         return userMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public User getByName(String name) {
+        return userMapper.selectByName(name);
+    }
+
     @Override
     public int insert(User user) {
         return userMapper.insert(user);

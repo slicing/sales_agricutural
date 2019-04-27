@@ -12,6 +12,8 @@ public interface UserService {
 
     User getOne(Integer id);
 
+    User getByName(String name);
+
     int insert(User user);
 
     int update(User user);

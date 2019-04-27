@@ -27,16 +27,16 @@ public class UserRoleServiceImpl implements UserRoleService {
     }
 
     @Override
-    public PageInfo selectByRoleId(int pageNum, int pageSize, Integer role_id) {
+    public PageInfo selectByRoleId(int pageNum, int pageSize, Integer roleId) {
         PageHelper.startPage(pageNum,pageSize);
-        List<UserRole> userRoles = userRoleMapper.selectByRoleId(role_id);
+        List<UserRole> userRoles = userRoleMapper.selectByRoleId(roleId);
         PageInfo pageInfo = new PageInfo(userRoles);
         return pageInfo;
     }
 
     @Override
-    public UserRole selectByUserId(Integer user_id) {
-        return userRoleMapper.selectByUserId(user_id);
+    public UserRole selectByUserId(Integer userId) {
+        return userRoleMapper.selectByUserId(userId);
     }
 
     @Override
