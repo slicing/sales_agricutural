@@ -17,24 +17,47 @@ public class PermissionController {
     @Autowired
     private PermissionService permissionService;
 
+    /**
+     * 显示所有信息
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
     @GetMapping("/All")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = permissionService.getAll(pageNum,pageSize);
         return new Result("success", "查询成功",pageInfo );
     }
 
+    /**
+     * 根据编号查询
+     * @param id
+     * @return
+     */
     @GetMapping("/Id")
     public Result getOne(Integer id){
         Permission permission = permissionService.getOne(id);
         return new Result("success", "查询成功",permission);
     }
 
+    /**
+     * 根据名称查询
+     * @param pageNum
+     * @param pageSize
+     * @param name
+     * @return
+     */
     @GetMapping("/Name")
-    public Result getAll(int pageNum, int pageSize,String name){
+    public Result getName(int pageNum, int pageSize,String name){
         PageInfo pageInfo = permissionService.selectByName(pageNum,pageSize,name);
         return new Result("success", "查询成功",pageInfo );
     }
 
+    /**
+     * 增加信息
+     * @param permission
+     * @return
+     */
     @PostMapping("/insert")
     public Result insert(Permission permission){
         int result = permissionService.insert(permission);
@@ -44,6 +67,11 @@ public class PermissionController {
         return new Result("success", "增加成功");
     }
 
+    /**
+     * 更新信息
+     * @param permission
+     * @return
+     */
     @PutMapping("/update")
     public Result update(Permission permission){
         int result  = permissionService.update(permission);
@@ -54,6 +82,11 @@ public class PermissionController {
     }
 
 
+    /**
+     * 删除信息
+     * @param permission
+     * @return
+     */
     @PutMapping("/delete")
     public Result delete(Permission permission){
         int result = permissionService.delete(permission);

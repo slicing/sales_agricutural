@@ -8,6 +8,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -69,6 +70,7 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     @Override
+    @Transactional
     public int update(Commodity commodity) {
         return commodityMapper.updateByPrimaryKeySelective(commodity);
     }
