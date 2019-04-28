@@ -25,7 +25,7 @@ public class RoleController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = roleService.getAll(pageNum,pageSize);
         return new Result("success","查询成功",pageInfo);
@@ -35,7 +35,7 @@ public class RoleController {
      * 显示所有角色
      * @return
      */
-    @GetMapping("/all")
+    @GetMapping("/all1")
     public Result selectAll(){
         List<Role> roles = roleService.selectAll();
         return new Result("success","查询成功",roles);
@@ -46,7 +46,7 @@ public class RoleController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         Role role = roleService.getOne(id);
         return new Result("success","查询成功",role);

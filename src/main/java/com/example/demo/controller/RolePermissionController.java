@@ -23,7 +23,7 @@ public class RolePermissionController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = rolePermissionService.selectAll(pageNum,pageSize);
         return new Result("success","查询成功",pageInfo);
@@ -34,7 +34,7 @@ public class RolePermissionController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         RolePermission rolePermission = rolePermissionService.getOne(id);
         return new Result("success","查询成功",rolePermission);
@@ -47,7 +47,7 @@ public class RolePermissionController {
      * @param roleId
      * @return
      */
-    @GetMapping("/RoleId")
+    @GetMapping("/roleId")
     public Result getRoleId(int pageNum, int pageSize, int roleId){
         PageInfo pageInfo = rolePermissionService.selectByRoleId(pageNum,pageSize, roleId);
         return new Result("success","查询成功",pageInfo);
@@ -61,7 +61,7 @@ public class RolePermissionController {
      * @param permissionId
      * @return
      */
-    @GetMapping("/PermissionId")
+    @GetMapping("/permissionId")
     public Result getPermissionId(int pageNum, int pageSize, int permissionId){
         PageInfo pageInfo = rolePermissionService.selectByPermissionId(pageNum,pageSize, permissionId);
         return new Result("success","查询成功",pageInfo);

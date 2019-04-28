@@ -24,7 +24,7 @@ public class UserRoleController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = userRoleService.selectAll(pageNum,pageSize);
         return new Result("success","查询成功",pageInfo);
@@ -35,7 +35,7 @@ public class UserRoleController {
      * @param userId
      * @return
      */
-    @GetMapping("/UserId")
+    @GetMapping("/userId")
     public Result getUserId( int userId){
         UserRole userRole = userRoleService.selectByUserId(userId);
         return new Result("success","查询成功",userRole);
@@ -48,7 +48,7 @@ public class UserRoleController {
      * @param roleId
      * @return
      */
-    @GetMapping("/RoleId")
+    @GetMapping("/roleId")
     public Result getRoleId(int pageNum, int pageSize, int roleId){
         PageInfo pageInfo = userRoleService.selectByRoleId(pageNum,pageSize, roleId);
         return new Result("success","查询成功",pageInfo);
@@ -59,7 +59,7 @@ public class UserRoleController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne( Integer id){
         UserRole userRole = userRoleService.getOne(id);
         return new Result("success","查询成功",userRole);

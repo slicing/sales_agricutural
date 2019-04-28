@@ -24,7 +24,7 @@ public class UserController  {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = userService.getAll(pageNum,pageSize);
         return new Result("success","查询成功",pageInfo);
@@ -35,7 +35,7 @@ public class UserController  {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         User user = userService.getOne(id);
         return new Result("success","查询成功",user);
@@ -46,7 +46,7 @@ public class UserController  {
      * @param name
      * @return
      */
-    @GetMapping("/Name")
+    @GetMapping("/name")
     public Result getName(String name){
         User user = userService.getByName(name);
         return new Result("success","查询成功",user);

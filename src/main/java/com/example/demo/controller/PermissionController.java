@@ -23,7 +23,7 @@ public class PermissionController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = permissionService.getAll(pageNum,pageSize);
         return new Result("success", "查询成功",pageInfo );
@@ -34,7 +34,7 @@ public class PermissionController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         Permission permission = permissionService.getOne(id);
         return new Result("success", "查询成功",permission);
@@ -47,7 +47,7 @@ public class PermissionController {
      * @param name
      * @return
      */
-    @GetMapping("/Name")
+    @GetMapping("/name")
     public Result getName(int pageNum, int pageSize,String name){
         PageInfo pageInfo = permissionService.selectByName(pageNum,pageSize,name);
         return new Result("success", "查询成功",pageInfo );

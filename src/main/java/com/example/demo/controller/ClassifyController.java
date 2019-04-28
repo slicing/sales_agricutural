@@ -25,7 +25,7 @@ public class ClassifyController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = classifyService.selectAll(pageNum,pageSize);
         return new Result("success","查询成功", pageInfo);
@@ -35,7 +35,7 @@ public class ClassifyController {
      * 显示所有分页
      * @return
      */
-    @GetMapping("/AllList")
+    @GetMapping("/allList")
     public Result selectAll(){
         List<Classify> classifies = classifyService.getAll();
         return new Result("success","查询成功", classifies);
@@ -46,7 +46,7 @@ public class ClassifyController {
      * @param name
      * @return
      */
-    @GetMapping("/Name")
+    @GetMapping("/name")
     public Result getName(String name){
         Classify classify = classifyService.selectByName(name);
         return new Result("success","查询成功", classify);
@@ -57,7 +57,7 @@ public class ClassifyController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         Classify classify = classifyService.getOne(id);
         return new Result("success","查询成功", classify);

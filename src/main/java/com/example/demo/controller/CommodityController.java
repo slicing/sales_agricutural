@@ -24,7 +24,7 @@ public class CommodityController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = commodityService.selectAll(pageNum,pageSize);
         return new Result("success","查询成功", pageInfo);
@@ -35,7 +35,7 @@ public class CommodityController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         Commodity commodity = commodityService.getOne(id);
         return new Result("success","查询成功", commodity);
@@ -48,7 +48,7 @@ public class CommodityController {
      * @param name
      * @return
      */
-    @GetMapping("/Name")
+    @GetMapping("/name")
     public Result getName(int pageNum, int pageSize, String name){
         PageInfo pageInfo = commodityService.selectByName(pageNum,pageSize,name);
         return new Result("success","查询成功", pageInfo);
@@ -61,7 +61,7 @@ public class CommodityController {
      * @param classifyId
      * @return
      */
-    @GetMapping("/ClassifyId")
+    @GetMapping("/classifyId")
     public Result getClassifyId(int pageNum, int pageSize, int classifyId){
         PageInfo pageInfo = commodityService.selectClassifyId(pageNum,pageSize,classifyId);
         return new Result("success","查询成功", pageInfo);
@@ -88,7 +88,7 @@ public class CommodityController {
      * @param num
      * @return
      */
-    @GetMapping("/Num")
+    @GetMapping("/num")
     public Result getNum(int pageNum, int pageSize, int num){
         PageInfo pageInfo = commodityService.selectByNum(pageNum,pageSize,num);
         return new Result("success","查询成功", pageInfo);

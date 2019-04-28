@@ -29,7 +29,7 @@ public class ShoppingCartController {
      * @param pageSize
      * @return
      */
-    @GetMapping("/All")
+    @GetMapping("/all")
     public Result getAll(int pageNum, int pageSize){
         PageInfo pageInfo = shoppingCartService.selectAll(pageNum,pageSize);
         return new Result("success","查询成功", pageInfo);
@@ -42,7 +42,7 @@ public class ShoppingCartController {
      * @param userId
      * @return
      */
-    @GetMapping("/UserId")
+    @GetMapping("/userId")
     public Result getUserId(int pageNum, int pageSize, int userId){
         PageInfo pageInfo = shoppingCartService.selectByUserId(pageNum,pageSize,userId);
         return new Result("success","查询成功", pageInfo);
@@ -53,7 +53,7 @@ public class ShoppingCartController {
      * @param id
      * @return
      */
-    @GetMapping("/Id")
+    @GetMapping("/id")
     public Result getOne(Integer id){
         ShoppingCart shoppingCart = shoppingCartService.getOne(id);
         return new Result("success","查询成功",shoppingCart);
@@ -66,7 +66,7 @@ public class ShoppingCartController {
      * @param commodityId
      * @return
      */
-    @GetMapping("/CommodityId")
+    @GetMapping("/commodityId")
     public Result getCommodityId(int pageNum, int pageSize, int commodityId){
         PageInfo pageInfo = shoppingCartService.selectByCommodityId(pageNum,pageSize,commodityId);
         return new Result("success","查询成功", pageInfo);
@@ -101,18 +101,19 @@ public class ShoppingCartController {
     }
 
     /***
-     * 结算
+     * 提交订单
      * @param id
      * @param num
      * @return
      */
-    @PutMapping("/Settlement")
+    @PutMapping("/settlement")
     public Result updateByOrder(Integer id,int num){
         Commodity commodity = commodityService.getOne(id);
         if(commodity.getNumber() > num ){
             commodity.setNumber(commodity.getNumber() - num);
             commodityService.update(commodity);
         }
+
         ShoppingCart shoppingCart = shoppingCartService.getOne(id);
         int result = shoppingCartService.delete(shoppingCart);
         if (result == 0){
