@@ -66,7 +66,7 @@ public class OrderMasterServiceImpl implements OrderMasterService {
 
     @Override
     public int insert(OrderMaster orderMaster) {
-        return orderMasterMapper.insert(orderMaster);
+        return orderMasterMapper.insertSelective(orderMaster);
     }
 
     @Override
